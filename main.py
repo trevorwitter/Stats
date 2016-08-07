@@ -19,7 +19,7 @@ def cohort_stats(x):
     stats = {'mean':mean, 'stdev':stdev, 'max':max_value, 'min':min_value}
     return stats
 
-def histogram(x):  #basic histogram plot for 1D array. Add test for normal distribution
+def histogram(x):  #basic histogram plot for 1D array
     y = np.array(x)
     rounded = np.rint(y)
     subject_counts = Counter(rounded)
