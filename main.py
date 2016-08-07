@@ -42,7 +42,7 @@ def Normality(x):
 
 def norm_histo(x):
     if Normality(x) == "normal":
-        print" normal distribution"
+        print "normal distribution"
         print cohort_stats(x)
         return histogram(x)   
     else:
