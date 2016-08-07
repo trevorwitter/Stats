@@ -33,3 +33,10 @@ def histogram(x):  #basic histogram plot for 1D array. Add test for normal distr
     plt.ylim(0, ymax)
     plt.show()
 
+def Normality(x):
+    w,p = scipy.stats.shapiro(x)
+    if p > .05:
+        return "normal"
+    else:
+        return "not normal"
+
