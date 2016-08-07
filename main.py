@@ -72,3 +72,4 @@ def correlation_plot(x, y):
     plt.title(("slope = ", slope))
     bestfit = [(i*slope)+intercept for i in x] 
     plt.plot(x, bestfit, linestyle='--', color='k')
+    plt.show()
