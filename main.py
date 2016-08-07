@@ -63,3 +63,12 @@ def variance(x):
 def covariance(x, y):
     n = len(x)
     return np.dot(de_mean(x), de_mean(y)) / (n-1)
+    
+def correlation_plot(x, y):
+    plt.plot(x, y, linestyle=' ', marker='.', color='b') 
+    slope, intercept, r_value, p_value, std_err = linregress(x, y)
+    print "slope", slope
+    print "intercept", intercept  
+    plt.title(("slope = ", slope))
+    bestfit = [(i*slope)+intercept for i in x] 
+    plt.plot(x, bestfit, linestyle='--', color='k')
