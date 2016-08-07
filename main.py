@@ -49,3 +49,17 @@ def norm_histo(x):
         print "not normal distribution"
         print cohort_stats(x)
         return histogram(x)
+
+#2D Stats 
+def de_mean(x):
+    x_bar = np.mean(x)
+    return [x_i - x_bar for x_i in x]
+
+def variance(x):
+    n = len(x)
+    deviations = de_mean(x)
+    return sum_of_squares(deviations)/(n-1)
+     
+def covariance(x, y):
+    n = len(x)
+    return np.dot(de_mean(x), de_mean(y)) / (n-1)
