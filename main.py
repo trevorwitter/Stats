@@ -40,3 +40,12 @@ def Normality(x):
     else:
         return "not normal"
 
+def norm_histo(x):
+    if Normality(x) == "normal":
+        print" normal distribution"
+        print cohort_stats(x)
+        return histogram(x)   
+    else:
+        print "not normal distribution"
+        print cohort_stats(x)
+        return histogram(x)
