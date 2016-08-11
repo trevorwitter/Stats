@@ -75,3 +75,14 @@ def correlation_plot(x, y):
     plt.text(xmax, ymin, r'$Slope = %s,\ R^2=%s$' % (np.round(slope, decimals = 2), np.round(r_value, decimals = 2)))
     plt.xlabel('%s' % (x.name)) 
     plt.ylabel('%s' % (y.name)) 
+    
+def correlation_matrix(data):
+    num_columns = 3
+    num_plot = (0)
+    fig, ax= plt.subplots(num_columns, num_columns)
+    for i in data:
+        for j in data:
+            num_plot += 1
+            ax = fig.add_subplot(num_columns, num_columns, num_plot)
+            correlation_plot(i, j)
+    plt.show()
