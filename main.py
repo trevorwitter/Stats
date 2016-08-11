@@ -67,7 +67,7 @@ def covariance(x, y):
 def correlation_plot(x, y):
     plt.plot(x, y, linestyle=' ', marker='.', color='b') 
     slope, intercept, r_value, p_value, std_err = linregress(x, y)
-    plt.title('%s x %s' % (x.name, y.name)) #Make this text show up automatically as x * y
+    plt.title('%s x %s' % (x.name, y.name)) 
     bestfit = [(i*slope)+intercept for i in x] 
     plt.plot(x, bestfit, linestyle='--', color='k')
     ymin = max(y)
