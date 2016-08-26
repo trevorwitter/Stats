@@ -55,6 +55,9 @@ def de_mean(x):
     x_bar = np.mean(x)
     return [x_i - x_bar for x_i in x]
 
+def sum_of_squares(n):
+    return sum([i**2 for i in range(1, n+1)])
+    
 def variance(x):
     n = len(x)
     deviations = de_mean(x)
