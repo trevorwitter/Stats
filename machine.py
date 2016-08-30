@@ -22,4 +22,13 @@ def accuracy(tp, fp, fn, tn): #true positive, false positive, false negative, tr
 def precision(tp, fp, fn, tn):
   """measures how accurate the positive predictions are"""
   return tp / (tp + fp)
-  
+
+def recall(tp, fp, fn, tn):
+  """measures fraction of the positives successfully identified"""
+  return tp / (tp + fn)
+
+def f1_score(tp, fp, fn, tn):
+  """harmonic mean of precision and recall; lies between them"""
+  p = precision(tp, fp, fn, tn)
+  r = recall(tp, fp, fn, tn)
+  return 2 * p * r / (p + r)
