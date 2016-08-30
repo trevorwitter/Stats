@@ -11,3 +11,15 @@ def train_test_split(x, y, test_pct):
     x_train, y_train = zipi(*train)       #unzip
     x_test, y_test = zip(*test)
     return x_train, x_test, y_train, y_test
+
+
+def accuracy(tp, fp, fn, tn): #true positive, false positive, false negative, true negative
+  """fraction of correct predictions"""
+  correct = tp + tn
+  total = tp + fp + fn + tn
+  return correct / total
+  
+def precision(tp, fp, fn, tn):
+  """measures how accurate the positive predictions are"""
+  return tp / (tp + fp)
+  
