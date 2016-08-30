@@ -18,8 +18,11 @@ def cohort_stats(x):
     min_value = np.min(x)
     stats = {'mean':mean, 'stdev':stdev, 'max':max_value, 'min':min_value}
     return stats
-
-def histogram(x):  #basic histogram plot for 1D array
+def data_range(x):
+    return max(x) - min(x)
+    
+def histogram(x):  
+    """basic histogram plot for 1D array"""
     y = np.array(x)
     rounded = np.rint(y)
     subject_counts = Counter(rounded)
@@ -34,6 +37,7 @@ def histogram(x):  #basic histogram plot for 1D array
     plt.show()
 
 def Normality(x):
+    """determines if distribution is normal"""
     w,p = scipy.stats.shapiro(x)
     if p > .05:
         return "normal"
@@ -52,6 +56,7 @@ def norm_histo(x):
 
 #2D Stats 
 def de_mean(x):
+    """resulting mean is zero; for use with variance"""
     x_bar = np.mean(x)
     return [x_i - x_bar for x_i in x]
 
@@ -59,6 +64,7 @@ def sum_of_squares(n):
     return sum([i**2 for i in range(1, n+1)])
     
 def variance(x):
+    """x must have at least 2 elements"""
     n = len(x)
     deviations = de_mean(x)
     return sum_of_squares(deviations)/(n-1)
