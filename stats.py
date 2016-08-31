@@ -77,6 +77,7 @@ def covariance(x, y):
     return np.dot(de_mean(x), de_mean(y)) / (n-1)
     
 def correlation_plot(x, y):
+    """correlation plot with linear regression, slope and R**2 display"""
     plt.plot(x, y, linestyle=' ', marker='.', color='b') 
     slope, intercept, r_value, p_value, std_err = linregress(x, y)
     plt.title('%s x %s' % (x.name, y.name)) 
@@ -89,6 +90,7 @@ def correlation_plot(x, y):
     plt.ylabel('%s' % (y.name)) 
     
 def correlation_matrix(data):
+    """returns a num_columns * num_columns matrix of correlations plots. Incomplete; working on this"""
     num_columns = 3
     num_plot = (0)
     fig, ax= plt.subplots(num_columns, num_columns)
