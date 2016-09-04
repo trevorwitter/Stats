@@ -8,7 +8,7 @@ def split_data(data, prob):
 def train_test_split(x, y, test_pct):
     data = zip(x, y)          #pair corresponding values
     train, test = split_data(data, 1 - test_pct)  #split the data set of pairs
-    x_train, y_train = zipi(*train)       #unzip
+    x_train, y_train = zip(*train)       #unzip
     x_test, y_test = zip(*test)
     return x_train, x_test, y_train, y_test
 
