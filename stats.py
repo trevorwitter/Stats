@@ -78,7 +78,7 @@ def covariance(x, y):
     
 def correlation_plot(x, y):
     """correlation plot with linear regression, slope and R**2 display"""
-    plt.plot(x, y, linestyle=' ', marker='.', color='b') 
+    plt.plot(x, y, linestyle=' ', marker='o', color='b') 
     slope, intercept, r_value, p_value, std_err = linregress(x, y)
     plt.title('%s x %s' % (x.name, y.name)) 
     bestfit = [(i*slope)+intercept for i in x] 
@@ -88,6 +88,7 @@ def correlation_plot(x, y):
     plt.text(xmax, ymin, r'$Slope = %s,\ R^2=%s$' % (np.round(slope, decimals = 2), np.round(r_value, decimals = 2)))
     plt.xlabel('%s' % (x.name)) 
     plt.ylabel('%s' % (y.name)) 
+    plt.show()
     
 def correlation_matrix(data):
     """returns a num_columns * num_columns matrix of correlations plots. Incomplete; working on this"""
